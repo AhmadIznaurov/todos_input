@@ -8,7 +8,7 @@ import { Todos } from "./Todos";
 function App() {
 
   const [todos, setTodos] = useState([
-    {favorite: false, text: 'Купиты продукты', done: true},
+    {favorite: false, text: 'Купиты продукты', done: true}, // add a new item (done: true) which work with first element in object
     {favorite: true, text: 'Купиты бананы', done: false},
     {favorite: false, text: 'Купиты машину', done: false},
     {favorite: true, text: 'Купиты дом', done: false},
@@ -16,7 +16,7 @@ function App() {
   ])
 
   const [text, setText] = useState('');
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState(false); // this hook for changing some logic in function
 
   const deleteTodo = (indexOfDelete) => {
     const filterTodo = todos.filter((todo, index) => {
@@ -47,10 +47,10 @@ function App() {
       setTodos([{ text: text, favorite: false, done: check }, ...todos]);
     }
     setText('');
-    setCheck(false);
+    setCheck(false); // code which change false to true
   }
 
-  const handleCheck = () => {
+  const handleCheck = () => {  // the basic function changing
     setCheck(!check)
   }
   return (
