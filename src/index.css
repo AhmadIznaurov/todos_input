@@ -1,13 +1,86 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Gilroy", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  width: 680px;
+  margin: auto;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header > h1 {
+  text-align: center;
+}
+
+.forms {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+}
+
+.forms > input {
+  width: 65%;
+  border: none;
+  padding: 12px;
+  background-color: #f4f4f4;
+}
+
+.forms > button {
+  width: 20%;
+  background-color: blueviolet;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eae5e5;
+}
+
+.favorite {
+  margin-right: 30px;
+}
+
+.todo > .favorite > button {
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.todo > .todo_text {
+  flex: 1;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.actions > button {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #e8e6c9;
+}
+
+.selected > .favorite button {
+  color: #eef80a;
 }
