@@ -1,6 +1,18 @@
 import React from 'react';
 
-export const Todo = ({todo, deleteTodo, index, makeFavorite}) => {
+interface TodoProps  {
+    todo: {
+        favorite: boolean
+        text: string
+        done: boolean
+    }
+    makeFavorite: (a: number) => void
+    deleteTodo:   (b: number) => void
+    index: number
+}
+
+
+export const Todo: React.FC<TodoProps> = ({todo, deleteTodo, index, makeFavorite}) => {
     return (
         <div className="todos">
             <div className={`todo ${todo.favorite ? 'selected' : ''}`}>
