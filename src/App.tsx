@@ -1,25 +1,30 @@
-import './index.css';
-import { useState } from "react";
+import React, { useState } from "react";
 import { Header } from "./Header";
 import { Forms } from "./Forms";
 import { Todos } from "./Todos";
 
 
-function App() {
+export const App: React.FC = () => {
 
-  const [todos, setTodos] = useState([
-    {favorite: false, text: 'Купиты продукты', done: true}, // add a new item (done: true) which work with first element in object
+  interface StateTodos  {
+   favorite: boolean
+   text: string
+   done: boolean
+  }
+
+  const [todos, setTodos] = useState<Array<StateTodos>>([
+    {favorite: false, text: 'Купиты продукты', done: true},
     {favorite: true, text: 'Купиты бананы', done: false},
     {favorite: false, text: 'Купиты машину', done: false},
     {favorite: true, text: 'Купиты дом', done: false},
     {favorite: false, text: 'Купиты участок', done: false}
   ])
 
-  const [text, setText] = useState('');
-  const [check, setCheck] = useState(false); // this hook for changing some logic in function
+  const [text, setText] = useState<string>('');
+  const [check, setCheck] = useState<boolean>(false);
 
-  const deleteTodo = (indexOfDelete) => {
-    const filterTodo = todos.filter((todo, index) => {
+  const deleteTodo = (indexOfDelete: number): void => {
+    const filterTodo = todos.filter((todo, index: number): boolean => {
       if (index === indexOfDelete) {
         return false
       }
@@ -28,8 +33,8 @@ function App() {
     setTodos(filterTodo)
   }
 
-  const makeFavorite = (indexOfFavotite) => {
-    const newTodos = todos.map((item, index) => {
+  const makeFavorite = (indexOfFavotite: number): void => {
+    const newTodos = todos.map((item, index: number): StateTodos => {
       if (index === indexOfFavotite) {
         return {
           ...item,
@@ -40,17 +45,16 @@ function App() {
     })
     setTodos(newTodos);
   }
-  const addTodo = (e) => {
-    e.preventDefault();
-    const noCopy = todos.find(todo => todo.text === text);
-    if (!noCopy) {
-      setTodos([{ text: text, favorite: false, done: check }, ...todos]);
-    }
+
+
+  const addTodo = (): void => {
+    setTodos([{ text: text, favorite: false, done: check }, ...todos]);
     setText('');
-    setCheck(false); // code which change false to true
+    setCheck(false);
   }
 
-  const handleCheck = () => {  // the basic function changing
+
+  const handleCheck = (): void => {
     setCheck(!check)
   }
   return (
@@ -74,4 +78,4 @@ function App() {
 
 
 
-export default App;
+
