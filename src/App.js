@@ -5,10 +5,10 @@ import { Forms } from "./Forms";
 import { Todos } from "./Todos";
 
 
-function App() {
+export const App = () => {
 
   const [todos, setTodos] = useState([
-    {favorite: false, text: 'Купиты продукты', done: true}, // add a new item (done: true) which work with first element in object
+    {favorite: false, text: 'Купиты продукты', done: true},
     {favorite: true, text: 'Купиты бананы', done: false},
     {favorite: false, text: 'Купиты машину', done: false},
     {favorite: true, text: 'Купиты дом', done: false},
@@ -16,7 +16,7 @@ function App() {
   ])
 
   const [text, setText] = useState('');
-  const [check, setCheck] = useState(false); // this hook for changing some logic in function
+  const [check, setCheck] = useState(false);
 
   const deleteTodo = (indexOfDelete) => {
     const filterTodo = todos.filter((todo, index) => {
@@ -47,10 +47,10 @@ function App() {
       setTodos([{ text: text, favorite: false, done: check }, ...todos]);
     }
     setText('');
-    setCheck(false); // code which change false to true
+    setCheck(false);
   }
 
-  const handleCheck = () => {  // the basic function changing
+  const handleCheck = () => {
     setCheck(!check)
   }
   return (
@@ -72,6 +72,3 @@ function App() {
   );
 }
 
-
-
-export default App;
