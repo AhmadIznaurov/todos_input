@@ -1,11 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { deleteTodo, makeFavorite } from './redux/TodoSlice'
 
-export const Todo = ({todo, deleteTodo, index, makeFavorite}) => {
+export const Todo = ({todo, index}) => {
+
+    const dispatch = useDispatch()
+
     return (
         <div className="todos">
             <div className={`todo ${todo.favorite ? 'selected' : ''}`}>
                 <div className="favorite">
-                    <button onClick={ () => makeFavorite(index)}>
+                    <button onClick={ () => dispatch(makeFavorite({index: index}))}>
                         ★
                     </button>
                     <input type="checkbox" checked={todo.done} />
@@ -14,7 +19,7 @@ export const Todo = ({todo, deleteTodo, index, makeFavorite}) => {
                     {todo.text}
                 </div>
                 <div className="actions">
-                    <button onClick={ () => deleteTodo(index)}>&#10005;</button>
+                    <button onClick={ () => dispatch(deleteTodo({index: index}))}>&#10005;</button>
                 </div>
             </div>
         </div>
