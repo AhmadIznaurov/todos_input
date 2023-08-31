@@ -36,9 +36,19 @@
     ]
   },
   "devDependencies": {
+
+    "@types/node": "^20.5.7",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "node-sass": "^9.0.0",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.2.2"
+
     "@types/node": "^20.5.4",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "typescript": "^5.1.6"
+
   }
 }
