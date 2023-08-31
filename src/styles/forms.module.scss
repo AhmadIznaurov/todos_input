@@ -1,0 +1,25 @@
+@import "style";
+
+.forms {
+  display: $flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+}
+
+.forms > input {
+  width: 65%;
+  border: none;
+  padding: 12px;
+  background-color: $bg-Color-input;
+}
+
+.forms > button {
+  width: 20%;
+  background-color: $bg-Color-form;
+  color: $color;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: $pointer;
+}
