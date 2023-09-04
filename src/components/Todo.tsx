@@ -1,10 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
-import { deleteTodo, makeFavorite } from './redux/TodoSlice'
+import { deleteTodo, makeFavorite } from '../redux/TodoSlice'
+import {useTypedDispatch} from "../hooks/useTypedDispatch";
+import '../styles/todos.scss'
 
-export const Todo = ({todo, index}) => {
+interface TodoProps {
+    todo: {
+        favorite: boolean
+        done: boolean
+        text: string
+    }
+    index: number
+}
 
-    const dispatch = useDispatch()
+export const Todo: React.FC<TodoProps> = ({todo, index}) => {
+
+    const dispatch = useTypedDispatch()
 
     return (
         <div className="todos">

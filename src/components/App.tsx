@@ -1,16 +1,16 @@
-import './index.css';
-import { useState } from "react";
+import '../index.css';
+import React, { useState } from "react";
 import { Header } from "./Header";
 import { Forms } from "./Forms";
 import { Todos } from "./Todos";
 
-export const App = () => {
+export const App: React.FC= () => {
 
-  const [text, setText] = useState('');
-  const [check, setCheck] = useState(false);
+  const [text, setText] = useState<string>('');
+  const [check, setCheck] = useState<boolean>(false);
 
 
-  const handleCheck = () => {
+  const handleCheck = (): void => {
     setCheck(!check)
   }
   return (
@@ -30,5 +30,3 @@ export const App = () => {
       </div>
   );
 }
-
-// I need to resolve GitHub conflicts between files

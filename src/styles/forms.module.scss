@@ -1,0 +1,23 @@
+.forms {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+}
+
+.forms > input {
+  width: 65%;
+  border: none;
+  padding: 12px;
+  background-color: #f4f4f4;
+}
+
+.forms > button {
+  width: 20%;
+  background-color: blueviolet;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
